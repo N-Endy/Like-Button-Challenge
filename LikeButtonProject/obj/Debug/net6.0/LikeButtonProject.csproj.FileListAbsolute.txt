@@ -69,3 +69,5 @@
 /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/obj/Debug/net6.0/LikeButtonProject.pdb
 /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/obj/Debug/net6.0/LikeButtonProject.genruntimeconfig.cache
 /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/obj/Debug/net6.0/ref/LikeButtonProject.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/NLog.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/NLog.Extensions.Logging.dll

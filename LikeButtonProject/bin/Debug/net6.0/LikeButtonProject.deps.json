@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.Design": "6.0.35",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.35",
+          "NLog.Extensions.Logging": "5.3.14",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -314,6 +315,27 @@
             "assetType": "runtime",
             "assemblyVersion": "4.0.2.0",
             "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "NLog/5.3.4": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.3.4.2778"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/5.3.14": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "NLog": "5.3.4"
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.3.14.587"
           }
         }
       },
@@ -725,6 +747,20 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "NLog/5.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gLy7+O1hEYJXIlcTr1/VWjGXrZTQFZzYNO18IWasD64pNwz0BreV+nHLxWKXWZzERRzoKnsk2XYtwLkTVk7J1A==",
+      "path": "nlog/5.3.4",
+      "hashPath": "nlog.5.3.4.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/5.3.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZFcdwdIYcGvWY268QMw2lIqnE8ziJTaS4iLm2ajRMUdgy9MFxJl+Y5s0zQxfgjTxbownGrAkJfoTkquAayKG6A==",
+      "path": "nlog.extensions.logging/5.3.14",
+      "hashPath": "nlog.extensions.logging.5.3.14.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.5.0": {
       "type": "package",
