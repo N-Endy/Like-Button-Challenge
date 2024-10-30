@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xXV+ztW1/9lvyQ4c//aeQA4LAoTY/CLy3Co3mplnev7cw22hZU11mc2QMiWrBkOFMc8NmVXsProjO0uBUbacOg==",
+  "dgSpecHash": "6OJdh6aqe6tZty+HUyPeiULPessc2eDuiB+orAR+O/i7UaGyOyMdYzGEDp1cYvXVDZMtshXL3sfmzcqNFAVi2w==",
   "success": true,
   "projectFilePath": "/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/LikeButtonProject.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,8 @@
     "/home/nelson/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/home/nelson/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/home/nelson/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/home/nelson/.nuget/packages/nlog/5.3.4/nlog.5.3.4.nupkg.sha512",
+    "/home/nelson/.nuget/packages/nlog.extensions.logging/5.3.14/nlog.extensions.logging.5.3.14.nupkg.sha512",
     "/home/nelson/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/home/nelson/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/home/nelson/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
