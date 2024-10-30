@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LikeButtonProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5531661c775784ab64b450eaee6dc9a577bc9fff")]
 [assembly: System.Reflection.AssemblyProductAttribute("LikeButtonProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LikeButtonProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
