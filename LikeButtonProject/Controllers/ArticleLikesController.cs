@@ -32,6 +32,6 @@ public class ArticleLikesController : ControllerBase
 
         var createdArticleLike = _service.ArticleLikeService.AddArticleLike(articleId, articleLikeForCreation, trackChanges: false);
 
-        return CreatedAtRoute("ArticleLikeById", new { id = createdArticleLike.Id }, createdArticleLike);
+        return Created("", createdArticleLike);
     }
 }
