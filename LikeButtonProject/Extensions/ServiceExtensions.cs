@@ -1,3 +1,4 @@
+using AspNetCoreRateLimit;
 using LikeButtonProject.Contracts;
 using LikeButtonProject.LoggerService;
 using LikeButtonProject.Repository;
@@ -30,4 +31,13 @@ public static class ServiceExtensions
     public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
         services.AddDbContext<RepositoryContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
+
+    public static void ConfigureRateLimiting(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddMemoryCache();
+        services.Configure<IpRateLimitOptions>(configuration.GetSection("IpRateLimiting"));
+        services.AddInMemoryRateLimiting();
+        services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+    }
+
 }

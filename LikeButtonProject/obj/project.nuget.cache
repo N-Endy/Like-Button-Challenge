@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6OJdh6aqe6tZty+HUyPeiULPessc2eDuiB+orAR+O/i7UaGyOyMdYzGEDp1cYvXVDZMtshXL3sfmzcqNFAVi2w==",
+  "dgSpecHash": "1ltj8kQ4btdDgIi9bPrzs98Mebvg/mTztLFIR7/VF2u9fDUin0UAmgvFutUatR1hnFtIE81l4d8zSXFJKSF0tg==",
   "success": true,
   "projectFilePath": "/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/LikeButtonProject.csproj",
   "expectedPackageFiles": [
+    "/home/nelson/.nuget/packages/aspnetcoreratelimit/5.0.0/aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "/home/nelson/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/nelson/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/nelson/.nuget/packages/microsoft.data.sqlclient/2.1.7/microsoft.data.sqlclient.2.1.7.nupkg.sha512",
@@ -35,6 +36,7 @@
     "/home/nelson/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/home/nelson/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/home/nelson/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/home/nelson/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
     "/home/nelson/.nuget/packages/nlog/5.3.4/nlog.5.3.4.nupkg.sha512",
     "/home/nelson/.nuget/packages/nlog.extensions.logging/5.3.14/nlog.extensions.logging.5.3.14.nupkg.sha512",
     "/home/nelson/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
