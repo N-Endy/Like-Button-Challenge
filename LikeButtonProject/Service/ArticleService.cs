@@ -1,5 +1,6 @@
 using LikeButtonProject.Contracts;
 using LikeButtonProject.Entities.Dtos;
+using LikeButtonProject.Entities.Exceptions;
 using LikeButtonProject.Service.Contracts;
 
 namespace LikeButtonProject.Service;
@@ -23,11 +24,8 @@ internal sealed class ArticleService : IArticleService
 
     public ArticleDto GetArticle(int id, bool trackChanges)
     {
-        var article = _repository.Article.GetArticle(id, trackChanges);
-        if (article == null)
-        {
-            throw new Exception($"Article with id: {id} doesn't exist in the database.");
-        }
+        var article = _repository.Article.GetArticle(id, trackChanges) ?? throw new ArticleNotFoundException(id);
+        
         return new ArticleDto(article.Id, article.Title, article.Content, article.CreationDate);
     }
 }
