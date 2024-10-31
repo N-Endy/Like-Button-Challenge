@@ -1,4 +1,5 @@
 using LikeButtonProject.Contracts;
+using LikeButtonProject.Entities.Dtos;
 using LikeButtonProject.Entities.Models;
 using LikeButtonProject.Service.Contracts;
 
@@ -14,12 +15,13 @@ internal sealed class ArticleService : IArticleService
         _logger = logger;
     }
 
-    public IEnumerable<Article> GetAllArticles(bool trackChanges)
+    public IEnumerable<ArticleDto> GetAllArticles(bool trackChanges)
     {
         try
         {
             var articles = _repository.Article.GetAllArticles(trackChanges);
-            return articles;
+            
+            return articles.Select(a => new ArticleDto(a.Id, a.Title, a.Content, a.CreationDate)).ToList();
         }
         catch (Exception ex)
         {

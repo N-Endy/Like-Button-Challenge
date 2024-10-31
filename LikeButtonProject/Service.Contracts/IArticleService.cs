@@ -1,7 +1,7 @@
-using LikeButtonProject.Entities.Models;
+using LikeButtonProject.Entities.Dtos;
 
 namespace LikeButtonProject.Service.Contracts;
 public interface IArticleService
 {
-    IEnumerable<Article> GetAllArticles(bool trackChanges);
+    IEnumerable<ArticleDto> GetAllArticles(bool trackChanges);
 }
