@@ -1,3 +1,4 @@
+using LikeButtonProject.Entities.Dtos;
 using LikeButtonProject.Service.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,5 +22,16 @@ public class ArticleLikesController : ControllerBase
         var articleLikesCount = articleLikes.Count();
 
         return Ok(new { articleLikesCount });
+    }
+
+    [HttpPost]
+    public IActionResult AddLike(int articleId, [FromBody] ArticleLikeForCreation articleLikeForCreation)
+    {
+        if (articleLikeForCreation == null)
+            return BadRequest("Article like is required and can't be null.");
+
+        var createdArticleLike = _service.ArticleLikeService.AddArticleLike(articleId, articleLikeForCreation.UserId, articleLikeForCreation, trackChanges: false);
+
+        return CreatedAtRoute("ArticleLikeById", new { id = createdArticleLike.Id }, createdArticleLike);
     }
 }

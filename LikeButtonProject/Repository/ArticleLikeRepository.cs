@@ -11,4 +11,7 @@ public class ArticleLikeRepository : RepositoryBase<ArticleLike>, IArticleLikeRe
 
     public IEnumerable<ArticleLike> GetArticleLikes(int articleId, bool trackChanges) =>
             FindByCondition(a => a.ArticleId == articleId, trackChanges).ToList();
+
+    public void AddArticleLike(int articleId, ArticleLike articleLike) =>
+        Add(articleLike);
 }
