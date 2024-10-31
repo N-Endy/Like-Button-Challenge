@@ -36,7 +36,7 @@ internal sealed class ArticleService : IArticleService
         {
             Title = article.Title,
             Content = article.Content,
-            CreationDate = article.CreationDate
+            CreationDate = DateTime.UtcNow
         };
 
         _repository.Article.AddArticle(newArticle);
