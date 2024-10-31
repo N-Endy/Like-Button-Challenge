@@ -13,4 +13,8 @@ public class ArticleRepository : RepositoryBase<Article>, IArticleRepository
         FindAll(trackChanges)
             .OrderBy(a => a.Title)
             .ToList();
+
+    public Article? GetArticle(int id, bool trackChanges) =>
+        FindByCondition(a => a.Id == id, trackChanges)
+        .SingleOrDefault();
 }

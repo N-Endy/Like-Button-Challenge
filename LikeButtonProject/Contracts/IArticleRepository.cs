@@ -4,4 +4,5 @@ namespace LikeButtonProject.Contracts;
 public interface IArticleRepository
 {
     IEnumerable<Article> GetAllArticles(bool trackChanges);
+    Article? GetArticle(int id, bool trackChanges);
 }

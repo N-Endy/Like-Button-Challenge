@@ -20,4 +20,12 @@ public class ArticlesController : ControllerBase
         
         return Ok(articles);
     }
+
+    [HttpGet("{id:int}")]
+    public IActionResult GetArticle(int id)
+    {
+        var article = _service.ArticleService.GetArticle(id, trackChanges: false);
+
+        return Ok(article);
+    }
 }

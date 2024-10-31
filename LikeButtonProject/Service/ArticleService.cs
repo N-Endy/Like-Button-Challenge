@@ -20,4 +20,14 @@ internal sealed class ArticleService : IArticleService
 
         return articles.Select(a => new ArticleDto(a.Id, a.Title, a.Content, a.CreationDate)).ToList();
     }
+
+    public ArticleDto GetArticle(int id, bool trackChanges)
+    {
+        var article = _repository.Article.GetArticle(id, trackChanges);
+        if (article == null)
+        {
+            throw new Exception($"Article with id: {id} doesn't exist in the database.");
+        }
+        return new ArticleDto(article.Id, article.Title, article.Content, article.CreationDate);
+    }
 }
