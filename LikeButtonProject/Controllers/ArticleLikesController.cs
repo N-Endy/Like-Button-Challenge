@@ -27,10 +27,10 @@ public class ArticleLikesController : ControllerBase
     [HttpPost]
     public IActionResult AddLike(int articleId, [FromBody] ArticleLikeForCreation articleLikeForCreation)
     {
-        if (articleLikeForCreation == null)
+        if (articleLikeForCreation is null)
             return BadRequest("Article like is required and can't be null.");
 
-        var createdArticleLike = _service.ArticleLikeService.AddArticleLike(articleId, articleLikeForCreation.UserId, articleLikeForCreation, trackChanges: false);
+        var createdArticleLike = _service.ArticleLikeService.AddArticleLike(articleId, articleLikeForCreation, trackChanges: false);
 
         return CreatedAtRoute("ArticleLikeById", new { id = createdArticleLike.Id }, createdArticleLike);
     }

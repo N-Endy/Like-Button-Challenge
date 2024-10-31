@@ -26,15 +26,15 @@ internal sealed class ArticleLikeService : IArticleLikeService
         return articleLikes.Select(a => new ArticleLikeDto(a.Id, a.ArticleId, a.UserId, a.LikedAt)).ToList();
     }
 
-    public ArticleLikeDto AddArticleLike(int articleId, int userId,  ArticleLikeForCreation articleLikeForCreation, bool trackChanges)
+    public ArticleLikeDto AddArticleLike(int articleId, ArticleLikeForCreation articleLikeForCreation, bool trackChanges)
     {
         _ = _repository.Article.GetArticle(articleId, trackChanges) ?? throw new ArticleNotFoundException(articleId);
 
         var existingLike = _repository.ArticleLike.GetArticleLikes(articleId, trackChanges)
-            .FirstOrDefault(l => l.ArticleId == articleId && l.UserId == userId);
+            .FirstOrDefault(l => l.ArticleId == articleId && l.UserId == articleLikeForCreation.UserId);
 
         if (existingLike != null)
-            throw new DuplicateLikeException(userId);
+            throw new DuplicateLikeException(articleLikeForCreation.UserId);
 
         var articleLike = new ArticleLike
         {
