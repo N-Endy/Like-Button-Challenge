@@ -8,4 +8,9 @@ public class ArticleRepository : RepositoryBase<Article>, IArticleRepository
     {
         
     }
+
+    public IEnumerable<Article> GetAllArticles(bool trackChanges) =>
+        FindAll(trackChanges)
+            .OrderBy(a => a.Title)
+            .ToList();
 }

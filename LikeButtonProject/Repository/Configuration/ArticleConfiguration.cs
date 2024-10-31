@@ -14,6 +14,18 @@ public class ArticleConfiguration : IEntityTypeConfiguration<Article>
                 Id = 1,
                 Title = "Sample Article",
                 Content = "This is a sample article for demonstration purposes."
+            },
+            new Article
+            {
+                Id = 2,
+                Title = "Another Sample Article",
+                Content = "This is another sample article for demonstration purposes."
+            },
+            new Article
+            {
+                Id = 3,
+                Title = "Yet Another Sample Article",
+                Content = "This is yet another sample article for demonstration purposes."
             }
         );
     }
