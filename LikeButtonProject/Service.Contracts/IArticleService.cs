@@ -5,4 +5,5 @@ public interface IArticleService
 {
     IEnumerable<ArticleDto> GetAllArticles(bool trackChanges);
     ArticleDto GetArticle(int id, bool trackChanges);
+    ArticleDto AddArticle(ArticleForCreationDto article);
 }

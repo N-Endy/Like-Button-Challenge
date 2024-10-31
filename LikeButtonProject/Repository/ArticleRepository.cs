@@ -17,4 +17,6 @@ public class ArticleRepository : RepositoryBase<Article>, IArticleRepository
     public Article? GetArticle(int id, bool trackChanges) =>
         FindByCondition(a => a.Id == id, trackChanges)
         .SingleOrDefault();
+
+    public void AddArticle(Article article) => Add(article);
 }

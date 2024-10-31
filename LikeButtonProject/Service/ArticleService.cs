@@ -1,6 +1,7 @@
 using LikeButtonProject.Contracts;
 using LikeButtonProject.Entities.Dtos;
 using LikeButtonProject.Entities.Exceptions;
+using LikeButtonProject.Entities.Models;
 using LikeButtonProject.Service.Contracts;
 
 namespace LikeButtonProject.Service;
@@ -27,5 +28,20 @@ internal sealed class ArticleService : IArticleService
         var article = _repository.Article.GetArticle(id, trackChanges) ?? throw new ArticleNotFoundException(id);
         
         return new ArticleDto(article.Id, article.Title, article.Content, article.CreationDate);
+    }
+
+    public ArticleDto AddArticle(ArticleForCreationDto article)
+    {
+        var newArticle = new Article
+        {
+            Title = article.Title,
+            Content = article.Content,
+            CreationDate = article.CreationDate
+        };
+
+        _repository.Article.AddArticle(newArticle);
+        _repository.Save();
+
+        return new ArticleDto(newArticle.Id, newArticle.Title, newArticle.Content, newArticle.CreationDate);
     }
 }
