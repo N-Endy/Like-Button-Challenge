@@ -12,11 +12,9 @@ public class RepositoryContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new ArticleConfiguration());
     }
 
-    public DbSet<User> Users { get; set;}
     public DbSet<Article> Articles { get; set;}
     public DbSet<ArticleLike> ArticleLikes { get; set;}
 }
