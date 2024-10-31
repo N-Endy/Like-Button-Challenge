@@ -15,28 +15,28 @@ public class ArticlesController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetArticles()
+    public async Task<IActionResult> GetArticles()
     {
-        var articles = _service.ArticleService.GetAllArticles(trackChanges: false);
+        var articles = await _service.ArticleService.GetAllArticlesAsync(trackChanges: false);
         
         return Ok(articles);
     }
 
     [HttpGet("{id:int}", Name = "ArticleById")]
-    public IActionResult GetArticle(int id)
+    public async Task<IActionResult> GetArticle(int id)
     {
-        var article = _service.ArticleService.GetArticle(id, trackChanges: false);
+        var article = await _service.ArticleService.GetArticleAsync(id, trackChanges: false);
 
         return Ok(article);
     }
 
     [HttpPost]
-    public IActionResult CreateArticle([FromBody] ArticleForCreationDto article)
+    public async Task<IActionResult> CreateArticle([FromBody] ArticleForCreationDto article)
     {
         if (article == null)
             return BadRequest("Article is required and can't be null.");
 
-        var createdArticle = _service.ArticleService.AddArticle(article);
+        var createdArticle = await _service.ArticleService.AddArticleAsync(article);
 
         return CreatedAtRoute("ArticleById", new { id = createdArticle.Id }, createdArticle);
     }

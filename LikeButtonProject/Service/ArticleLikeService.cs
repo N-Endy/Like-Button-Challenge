@@ -17,21 +17,21 @@ internal sealed class ArticleLikeService : IArticleLikeService
         _logger = logger;
     }
 
-    public IEnumerable<ArticleLikeDto> GetArticleLikes(int articleId, bool trackChanges)
+    public async Task<IEnumerable<ArticleLikeDto>> GetArticleLikesAsync(int articleId, bool trackChanges)
     {
-        _ = _repository.Article.GetArticle(articleId, trackChanges) ?? throw new ArticleNotFoundException(articleId);
+        _ = await _repository.Article.GetArticleAsync(articleId, trackChanges) ?? throw new ArticleNotFoundException(articleId);
 
-        var articleLikes = _repository.ArticleLike.GetArticleLikes(articleId, trackChanges);
+        var articleLikes = await _repository.ArticleLike.GetArticleLikesAsync(articleId, trackChanges);
 
         return articleLikes.Select(a => new ArticleLikeDto(a.Id, a.ArticleId, a.UserId, a.LikedAt)).ToList();
     }
 
-    public ArticleLikeDto AddArticleLike(int articleId, ArticleLikeForCreation articleLikeForCreation, bool trackChanges)
+    public async Task<ArticleLikeDto> AddArticleLikeAsync(int articleId, ArticleLikeForCreation articleLikeForCreation, bool trackChanges)
     {
-        _ = _repository.Article.GetArticle(articleId, trackChanges) ?? throw new ArticleNotFoundException(articleId);
+        _ = await _repository.Article.GetArticleAsync(articleId, trackChanges) ?? throw new ArticleNotFoundException(articleId);
 
-        var existingLike = _repository.ArticleLike.GetArticleLikes(articleId, trackChanges)
-            .FirstOrDefault(l => l.ArticleId == articleId && l.UserId == articleLikeForCreation.UserId);
+        var articleLikes = await _repository.ArticleLike.GetArticleLikesAsync(articleId, trackChanges);
+        var existingLike = articleLikes.FirstOrDefault(l => l.ArticleId == articleId && l.UserId == articleLikeForCreation.UserId);
 
         if (existingLike != null)
             throw new DuplicateLikeException(articleLikeForCreation.UserId);
@@ -44,7 +44,7 @@ internal sealed class ArticleLikeService : IArticleLikeService
         };
 
         _repository.ArticleLike.AddArticleLike(articleId, articleLike);
-        _repository.Save();
+        await _repository.SaveAsync();
 
         return new ArticleLikeDto(articleLike.Id, articleLike.ArticleId, articleLike.UserId, articleLike.LikedAt);
     }

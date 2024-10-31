@@ -3,7 +3,7 @@ using LikeButtonProject.Entities.Dtos;
 namespace LikeButtonProject.Service.Contracts;
 public interface IArticleService
 {
-    IEnumerable<ArticleDto> GetAllArticles(bool trackChanges);
-    ArticleDto GetArticle(int id, bool trackChanges);
-    ArticleDto AddArticle(ArticleForCreationDto article);
+    Task<IEnumerable<ArticleDto>> GetAllArticlesAsync(bool trackChanges);
+    Task<ArticleDto> GetArticleAsync(int id, bool trackChanges);
+    Task<ArticleDto> AddArticleAsync(ArticleForCreationDto article);
 }

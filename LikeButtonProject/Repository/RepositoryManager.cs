@@ -17,6 +17,6 @@ namespace LikeButtonProject.Repository
 
         public IArticleRepository Article => _articleRepository.Value;
         public IArticleLikeRepository ArticleLike => _articleLikeRepository.Value;
-        public void Save() => _repositoryContext.SaveChanges();
+        public async Task SaveAsync() => await _repositoryContext.SaveChangesAsync();
     }
 }

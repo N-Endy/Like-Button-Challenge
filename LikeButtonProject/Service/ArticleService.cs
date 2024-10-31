@@ -16,21 +16,21 @@ internal sealed class ArticleService : IArticleService
         _logger = logger;
     }
 
-    public IEnumerable<ArticleDto> GetAllArticles(bool trackChanges)
+    public async Task<IEnumerable<ArticleDto>> GetAllArticlesAsync(bool trackChanges)
     {
-        var articles = _repository.Article.GetAllArticles(trackChanges);
+        var articles = await _repository.Article.GetAllArticlesAsync(trackChanges);
 
         return articles.Select(a => new ArticleDto(a.Id, a.Title, a.Content, a.CreationDate)).ToList();
     }
 
-    public ArticleDto GetArticle(int id, bool trackChanges)
+    public async Task<ArticleDto> GetArticleAsync(int id, bool trackChanges)
     {
-        var article = _repository.Article.GetArticle(id, trackChanges) ?? throw new ArticleNotFoundException(id);
+        var article = await _repository.Article.GetArticleAsync(id, trackChanges) ?? throw new ArticleNotFoundException(id);
         
         return new ArticleDto(article.Id, article.Title, article.Content, article.CreationDate);
     }
 
-    public ArticleDto AddArticle(ArticleForCreationDto article)
+    public async Task<ArticleDto> AddArticleAsync(ArticleForCreationDto article)
     {
         var newArticle = new Article
         {
@@ -40,7 +40,7 @@ internal sealed class ArticleService : IArticleService
         };
 
         _repository.Article.AddArticle(newArticle);
-        _repository.Save();
+        await _repository.SaveAsync();
 
         return new ArticleDto(newArticle.Id, newArticle.Title, newArticle.Content, newArticle.CreationDate);
     }

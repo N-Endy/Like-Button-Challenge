@@ -1,5 +1,6 @@
 using LikeButtonProject.Contracts;
 using LikeButtonProject.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LikeButtonProject.Repository;
 public class ArticleRepository : RepositoryBase<Article>, IArticleRepository
@@ -9,14 +10,14 @@ public class ArticleRepository : RepositoryBase<Article>, IArticleRepository
         
     }
 
-    public IEnumerable<Article> GetAllArticles(bool trackChanges) =>
-        FindAll(trackChanges)
+    public async Task<IEnumerable<Article>> GetAllArticlesAsync(bool trackChanges) =>
+        await FindAll(trackChanges)
             .OrderBy(a => a.Title)
-            .ToList();
+            .ToListAsync();
 
-    public Article? GetArticle(int id, bool trackChanges) =>
-        FindByCondition(a => a.Id == id, trackChanges)
-        .SingleOrDefault();
+    public async Task<Article?> GetArticleAsync(int id, bool trackChanges) =>
+        await FindByCondition(a => a.Id == id, trackChanges)
+        .SingleOrDefaultAsync();
 
     public void AddArticle(Article article) => Add(article);
 }

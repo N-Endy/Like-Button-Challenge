@@ -15,9 +15,9 @@ public class ArticleLikesController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetLikes(int articleId)
+    public async Task<IActionResult> GetLikes(int articleId)
     {
-        var articleLikes = _service.ArticleLikeService.GetArticleLikes(articleId, trackChanges: false);
+        var articleLikes = await _service.ArticleLikeService.GetArticleLikesAsync(articleId, trackChanges: false);
 
         var articleLikesCount = articleLikes.Count();
 
@@ -25,12 +25,12 @@ public class ArticleLikesController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult AddLike(int articleId, [FromBody] ArticleLikeForCreation articleLikeForCreation)
+    public async Task<IActionResult> AddLike(int articleId, [FromBody] ArticleLikeForCreation articleLikeForCreation)
     {
         if (articleLikeForCreation is null)
             return BadRequest("Article like is required and can't be null.");
 
-        var createdArticleLike = _service.ArticleLikeService.AddArticleLike(articleId, articleLikeForCreation, trackChanges: false);
+        var createdArticleLike = await _service.ArticleLikeService.AddArticleLikeAsync(articleId, articleLikeForCreation, trackChanges: false);
 
         return Created("", createdArticleLike);
     }
