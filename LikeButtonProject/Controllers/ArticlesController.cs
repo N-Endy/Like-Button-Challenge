@@ -1,6 +1,8 @@
+using System.Text.Json;
 using LikeButtonProject.Entities.Dtos;
 using LikeButtonProject.Service.Contracts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace LikeButtonProject.Controllers;
 [Route("api/articles")]
@@ -8,16 +10,29 @@ namespace LikeButtonProject.Controllers;
 public class ArticlesController : ControllerBase
 {
     private readonly IServiceManager _service;
+    private readonly IDistributedCache _cache;
 
-    public ArticlesController(IServiceManager service)
+    public ArticlesController(IServiceManager service, IDistributedCache cache)
     {
         _service = service;
+        _cache = cache;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetArticles()
     {
+        var cacheKey = "articles_all";
+        var cachedArticles = await _cache.GetStringAsync(cacheKey);
+
+        if (!string.IsNullOrEmpty(cachedArticles))
+            return Ok(JsonSerializer.Deserialize<IEnumerable<ArticleDto>>(cachedArticles));
+        
         var articles = await _service.ArticleService.GetAllArticlesAsync(trackChanges: false);
+
+        await _cache.SetStringAsync(cacheKey, JsonSerializer.Serialize(articles), new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(1)
+        });
         
         return Ok(articles);
     }

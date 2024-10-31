@@ -73,3 +73,10 @@
 /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/NLog.Extensions.Logging.dll
 /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/AspNetCoreRateLimit.dll
 /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/Microsoft.Extensions.Caching.Abstractions.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/Pipelines.Sockets.Unofficial.dll
+/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/StackExchange.Redis.dll

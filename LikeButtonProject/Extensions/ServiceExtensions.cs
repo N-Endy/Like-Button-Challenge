@@ -40,4 +40,13 @@ public static class ServiceExtensions
         services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
     }
 
+    public static void ConfigureRedis(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = configuration.GetValue<string>("Redis:Configuration");
+            options.InstanceName = configuration.GetValue<string>("Redis:InstanceName");
+        });
+    }
+
 }

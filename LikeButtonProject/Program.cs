@@ -15,6 +15,7 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureRateLimiting(builder.Configuration);
+builder.Services.ConfigureRedis(builder.Configuration);
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
