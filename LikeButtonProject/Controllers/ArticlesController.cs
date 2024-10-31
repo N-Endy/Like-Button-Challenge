@@ -16,14 +16,8 @@ public class ArticlesController : ControllerBase
     [HttpGet]
     public IActionResult GetArticles()
     {
-        try
-        {
-            var articles = _service.ArticleService.GetAllArticles(trackChanges: false);
-            return Ok(articles);
-        }
-        catch
-        {
-            return StatusCode(500, "Internal server error. Unable to retrieve articles.");
-        }
+        var articles = _service.ArticleService.GetAllArticles(trackChanges: false);
+        
+        return Ok(articles);
     }
 }

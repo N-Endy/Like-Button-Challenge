@@ -996,3 +996,106 @@
 2024-10-31 14:59:50.1819 Trace FileTarget(Name=logfile) has 2 layouts
 2024-10-31 14:59:50.1842 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
 2024-10-31 14:59:50.1863 Info Configuration initialized.
+2024-10-31 15:20:03.1486 Info AppDomain Shutting down. LogFactory closing...
+2024-10-31 15:20:03.1525 Debug Stop watching file-filter 'nlog.config' in directory: /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject
+2024-10-31 15:20:03.1551 Debug Closing logging configuration...
+2024-10-31 15:20:03.1551 Trace Closing FileTarget(Name=logfile)
+2024-10-31 15:20:03.1559 Debug FileTarget(Name=logfile): Closing...
+2024-10-31 15:20:03.1584 Debug FileTarget(Name=logfile): Closed.
+2024-10-31 15:20:03.1584 Trace Closing .\logs\${shortdate}_logfile.txt
+2024-10-31 15:20:03.1590 Trace Closing Layout Renderer: ${literal}
+2024-10-31 15:20:03.1590 Trace Closing Layout Renderer: ${shortdate}
+2024-10-31 15:20:03.1590 Trace Closing Layout Renderer: ${literal}
+2024-10-31 15:20:03.1590 Trace Closing ${longdate} ${level:uppercase=true} ${message}
+2024-10-31 15:20:03.1590 Trace Closing Layout Renderer: ${longdate}
+2024-10-31 15:20:03.1600 Trace Closing Layout Renderer: ${literal}
+2024-10-31 15:20:03.1600 Trace Closing Layout Renderer: ${level}
+2024-10-31 15:20:03.1600 Trace Closing Layout Renderer: ${literal}
+2024-10-31 15:20:03.1600 Trace Closing Layout Renderer: ${message}
+2024-10-31 15:20:03.1600 Debug Finished closing logging configuration.
+2024-10-31 15:20:03.1600 Info LogFactory has been closed.
+2024-10-31 15:20:10.9700 Debug Message Template Auto Format enabled
+2024-10-31 15:20:11.0647 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2024-10-31 15:20:11.0675 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2024-10-31 15:20:11.0695 Debug FileTarget FilePathLayout with FilePathKind.Relative using AppDomain.BaseDirectory: /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/
+2024-10-31 15:20:11.0701 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2024-10-31 15:20:11.0701 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2024-10-31 15:20:11.0732 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2024-10-31 15:20:11.0732 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2024-10-31 15:20:11.0732 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2024-10-31 15:20:11.0732 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2024-10-31 15:20:11.0745 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2024-10-31 15:20:11.0752 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-10-31 15:20:11.0761 Trace ParseRulesElement
+2024-10-31 15:20:11.0893 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.4.2778. Product version: 5.3.4+73d83d3161d31288ca5c554cc50d27b6bed5f28b. GlobalAssemblyCache: False
+2024-10-31 15:20:11.0954 Debug Start watching file-filter 'nlog.config' in directory: /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject
+2024-10-31 15:20:11.0971 Debug --- NLog configuration dump ---
+2024-10-31 15:20:11.0971 Debug Targets:
+2024-10-31 15:20:11.0989 Debug FileTarget(Name=logfile)
+2024-10-31 15:20:11.0989 Debug Rules:
+2024-10-31 15:20:11.1014 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2024-10-31 15:20:11.1014 Debug --- End of NLog configuration dump ---
+2024-10-31 15:20:11.1066 Trace FindReachableObject<System.Object>:
+2024-10-31 15:20:11.1076 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2024-10-31 15:20:11.1084 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2024-10-31 15:20:11.1102 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2024-10-31 15:20:11.1109 Trace   Scanning Property FileName '.\logs\${shortdate}_logfile.txt' NLog.Layouts.Layout
+2024-10-31 15:20:11.1109 Trace   Scanning SimpleLayout '.\logs\${shortdate}_logfile.txt'
+2024-10-31 15:20:11.1109 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2024-10-31 15:20:11.1109 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1120 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2024-10-31 15:20:11.1120 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1120 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2024-10-31 15:20:11.1130 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2024-10-31 15:20:11.1130 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2024-10-31 15:20:11.1130 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2024-10-31 15:20:11.1130 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1130 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2024-10-31 15:20:11.1130 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1130 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2024-10-31 15:20:11.1143 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2024-10-31 15:20:11.1143 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2024-10-31 15:20:11.1167 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/nlog.config
+2024-10-31 15:20:11.1188 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2024-10-31 15:20:11.1236 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2024-10-31 15:20:11.1240 Trace Initializing Layout Renderer: ${message}
+2024-10-31 15:20:11.1240 Trace Initializing Layout Renderer: ${literal}
+2024-10-31 15:20:11.1240 Trace Initializing Layout Renderer: ${level}
+2024-10-31 15:20:11.1240 Trace Initializing Layout Renderer: ${literal}
+2024-10-31 15:20:11.1250 Trace Initializing Layout Renderer: ${longdate}
+2024-10-31 15:20:11.1250 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2024-10-31 15:20:11.1282 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2024-10-31 15:20:11.1282 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2024-10-31 15:20:11.1282 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2024-10-31 15:20:11.1282 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2024-10-31 15:20:11.1282 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1282 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2024-10-31 15:20:11.1290 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1290 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2024-10-31 15:20:11.1310 Trace Initializing Layout Renderer: ${literal}
+2024-10-31 15:20:11.1310 Trace Initializing Layout Renderer: ${shortdate}
+2024-10-31 15:20:11.1310 Trace Initializing Layout Renderer: ${literal}
+2024-10-31 15:20:11.1310 Trace Initializing .\logs\${shortdate}_logfile.txt
+2024-10-31 15:20:11.1310 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2024-10-31 15:20:11.1310 Trace Scanning SimpleLayout '.\logs\${shortdate}_logfile.txt'
+2024-10-31 15:20:11.1310 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2024-10-31 15:20:11.1310 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1319 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2024-10-31 15:20:11.1319 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2024-10-31 15:20:11.1319 Trace Initializing FileTarget(Name=logfile)
+2024-10-31 15:20:11.1338 Trace FindReachableObject<NLog.Layouts.Layout>:
+2024-10-31 15:20:11.1340 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2024-10-31 15:20:11.1340 Trace  Scanning Property FileName '.\logs\${shortdate}_logfile.txt' NLog.Layouts.Layout
+2024-10-31 15:20:11.1340 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2024-10-31 15:20:11.1340 Trace FileTarget(Name=logfile) has 2 layouts
+2024-10-31 15:20:11.1360 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2024-10-31 15:20:11.1377 Info Configuration initialized.
+2024-10-31 15:20:23.8450 Debug Targets configured when LogLevel >= Debug for Logger: LikeButtonProject.LoggerService.LoggerManager
+2024-10-31 15:20:23.8450 Debug Logger LikeButtonProject.LoggerService.LoggerManager [Debug] => logfile
+2024-10-31 15:20:23.8450 Debug Logger LikeButtonProject.LoggerService.LoggerManager [Info] => logfile
+2024-10-31 15:20:23.8450 Debug Logger LikeButtonProject.LoggerService.LoggerManager [Warn] => logfile
+2024-10-31 15:20:23.8450 Debug Logger LikeButtonProject.LoggerService.LoggerManager [Error] => logfile
+2024-10-31 15:20:23.8450 Debug Logger LikeButtonProject.LoggerService.LoggerManager [Fatal] => logfile
+2024-10-31 15:20:23.8703 Debug FileTarget(Name=logfile): Preparing for new file: '/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/.\logs\2024-10-31_logfile.txt'
+2024-10-31 15:20:23.8777 Debug FileTarget(Name=logfile): Creating file appender: '/home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/.\logs\2024-10-31_logfile.txt'
+2024-10-31 15:20:23.8792 Trace FileTarget(Name=logfile): Opening /home/nelson/Desktop/C#/Like-Button-Challenge/LikeButtonProject/bin/Debug/net6.0/.\logs\2024-10-31_logfile.txt with allowFileSharedWriting=False
